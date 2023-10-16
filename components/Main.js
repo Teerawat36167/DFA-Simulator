@@ -91,14 +91,18 @@ const Main = () => {
 
   const handleSimulation = (e) => {
     const output = tokenize(string)
-    console.log(output)
+    const allPath = output[0]
     e.preventDefault();
-    const pathWithZeroes = [0].concat(...output[0][0].map((e) => [e,null]));
+    let walking = []
+    for (let i = 0; i < allPath.length; i++) walking = walking.concat(allPath[i])
+
+    const pathWithZeroes = [0].concat(...walking.map((e) => [e, null]));
+
+
     pathWithZeroes.some((node, i) => {
-      console.log(node);
       setTimeout(() => {
         setCurrentNode(node)
-      },i*400)
+      }, i * 700)
     })
   }
 
