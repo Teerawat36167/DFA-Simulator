@@ -32,7 +32,7 @@ const LeftBox = ({
         mt={[14, 14, 16, 16, 16, 0]}
       >
         <Flex align="flex-end" justify="space-between">
-          <Heading variant="title">DFA Simulator</Heading>
+          <Heading variant="title">Tokenizer Virtualization</Heading>
           <Code fontSize={["0.5em", null, "0.6em", null, null, "0.6em"]}>
             CHICKEN DONT'T EAT PORK
           </Code>
@@ -96,7 +96,7 @@ const LeftBox = ({
             <Flex>
               <Button
                 onClick={handleSimulation}
-                // onClick={handleTest}
+              // onClick={handleTest}
               >
                 Simulate
               </Button>
