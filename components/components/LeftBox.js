@@ -93,8 +93,8 @@ const LeftBox = ({
           <Flex justify="space-between" align="center">
             <Flex>
               <Button
-                // onClick={handleSimulation}
-                onClick={handleTest}
+                onClick={handleSimulation}
+                // onClick={handleTest}
               >
                 Simulate
               </Button>

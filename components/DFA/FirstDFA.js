@@ -23,7 +23,6 @@ const variants = {
 
 const FirstDFA = ({ simulating, currentNode }) => {
 
-
   return (
     <>
       {/* LETTERS */}
@@ -775,7 +774,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q1"
         variants={variants}
         initial="initial"
-        animate={currentNode == 1 ? "pulse" : ""}
+        animate={currentNode == 0 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         0
@@ -784,7 +783,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q2"
         variants={variants}
         initial="initial"
-        animate={currentNode == 2 ? "pulse" : ""}
+        animate={currentNode == 1 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         1
@@ -793,7 +792,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q3"
         variants={variants}
         initial="initial"
-        animate={currentNode == 3 ? "pulse" : ""}
+        animate={currentNode == 2 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         2
@@ -802,7 +801,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q4"
         variants={variants}
         initial="initial"
-        animate={currentNode == 4 ? "pulse" : ""}
+        animate={currentNode == 3 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         3
@@ -811,7 +810,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q5"
         variants={variants}
         initial="initial"
-        animate={currentNode == 5 ? "pulse" : ""}
+        animate={currentNode == 4 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         4
@@ -820,7 +819,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q6"
         variants={variants}
         initial="initial"
-        animate={currentNode == 6 ? "pulse" : ""}
+        animate={currentNode == 5 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         5
@@ -829,7 +828,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q7"
         variants={variants}
         initial="initial"
-        animate={currentNode == 7 ? "pulse" : ""}
+        animate={currentNode == 6 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         6
@@ -838,7 +837,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q8"
         variants={variants}
         initial="initial"
-        animate={currentNode == 8 ? "pulse" : ""}
+        animate={currentNode == 7 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         7
@@ -847,7 +846,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q9"
         variants={variants}
         initial="initial"
-        animate={currentNode == 9 ? "pulse" : ""}
+        animate={currentNode == 8 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         8
@@ -856,7 +855,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q10"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 9 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         9
@@ -874,7 +873,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q12"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 11 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         11
@@ -883,7 +882,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q13"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 12 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         12
@@ -892,7 +891,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q14"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 13 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         13
@@ -901,7 +900,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q15"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 14 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         14
@@ -910,7 +909,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q16"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 15 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         15
@@ -919,7 +918,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q17"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 16 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         16
@@ -928,7 +927,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q18"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 17 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         17
@@ -937,7 +936,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="q19"
         variants={variants}
         initial="initial"
-        animate={currentNode == 10 ? "pulse" : ""}
+        animate={currentNode == 18 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         18
@@ -946,7 +945,7 @@ const FirstDFA = ({ simulating, currentNode }) => {
         variant="T"
         variants={variants}
         initial="initial"
-        animate={currentNode == "T" ? "pulse" : ""}
+        animate={currentNode == -1 ? "pulse" : ""}
         whileHover={!simulating && "scale"}
       >
         -1

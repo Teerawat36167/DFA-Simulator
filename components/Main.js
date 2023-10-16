@@ -1,9 +1,10 @@
 import { Flex, useToast, Divider } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { DFA, problem1, language1 } from "./DFA/Logic";
+import { DFA, problem1, language1 } from "./DFA/Tokenize";
 import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
+import { tokenize } from "./DFA/Tokenize";
 
 const Main = () => {
 
@@ -11,7 +12,7 @@ const Main = () => {
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
 
-  const [currentNode, setCurrentNode] = useState(0);
+  const [currentNode, setCurrentNode] = useState();
   const [simulating, setSimulating] = useState(false);
 
   const closeToasts = useToast();
@@ -86,23 +87,21 @@ const Main = () => {
     closeAll();
   };
 
-  const inp = [1,2,3]
+  // const inp = [1,2,3]
 
   const handleSimulation = (e) => {
+    const output = tokenize(string)
+    console.log(output)
     e.preventDefault();
-    const pathWithZeroes = [0].concat(...inp.map((e) => [e, 0]));
+    const pathWithZeroes = [0].concat(...output[0][0].map((e) => [e,null]));
     pathWithZeroes.some((node, i) => {
+      console.log(node);
       setTimeout(() => {
         setCurrentNode(node)
       },i*400)
     })
   }
 
-  const handleTest = (e) => {
-    if (input == "") {
-      notInLanguageToast();
-    }
-  }
 
   const handleTest = (e) => {
     if (input == "") {
