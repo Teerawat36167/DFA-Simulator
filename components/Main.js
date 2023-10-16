@@ -90,6 +90,10 @@ const Main = () => {
 
   // const inp = [1,2,3]
 
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   const handleSimulation = (e) => {
     const output = tokenize(string)
     setOutputString(output[1])
@@ -100,11 +104,18 @@ const Main = () => {
 
     const pathWithZeroes = [0].concat(...walking.map((e) => [e, null]));
 
-
-    pathWithZeroes.some((node, i) => {
-      setTimeout(() => {
-        setCurrentNode(node)
-      }, i * 700)
+    pathWithZeroes.some( (node, i) => {
+      if (node == 17) {
+        setTimeout(() => {
+          setCurrentNode(node)
+          console.log("node")
+        }, i * 500)
+      } else {
+        setTimeout(() => {
+          setCurrentNode(node)
+          console.log(node)
+        }, i * 500)
+      }
     })
   }
   
