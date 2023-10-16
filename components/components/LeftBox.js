@@ -12,13 +12,12 @@ import { FaCheck } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 
 const LeftBox = ({
-  handleTest,
+  // handleTest,
   data,
   string,
   handleReset,
   handleTextChange,
   handleSimulation,
-  simulating,
 }) => {
   return (
     <>
@@ -37,7 +36,6 @@ const LeftBox = ({
         <Divider mb="6" />
 
         <Box>
-          <form onSubmit={handleTest}>
             <Flex align="center">
               <Heading>Input String:</Heading>
               <Flex align="center">
@@ -63,39 +61,32 @@ const LeftBox = ({
                 )}
               </Flex>
             </Flex>
-            <textarea
+            {/* <textarea
               
-            />
-            {/* <Input
+            /> */}
+            <Input
               maxLength="500"
               fontSize={["0.7em", "0.7em", "0.9em"]}
               my={3}
               placeholder={"e.g. babbabab"}
               value={string}
               onChange={handleTextChange}
-            /> */}
+            />
             <Flex justify="space-between" align="center">
               <Flex>
                 <Button
-                  isLoading={simulating}
-                  loadingText="simulating..."
-                  spinnerPlacement="start"
                   onClick={handleSimulation}
-                  ml={2}
-                  disabled={simulating}
                 >
                   Simulate
                 </Button>
                 <Button
                   variant="clear"
                   onClick={handleReset}
-                  disabled={simulating}
                 >
                   Clear
                 </Button>
               </Flex>
             </Flex>
-          </form>
         </Box>
       </Box>
     </>

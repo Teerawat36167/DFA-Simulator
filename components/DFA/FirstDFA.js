@@ -277,117 +277,498 @@ const FirstDFA = ({ currentNode, simulating }) => {
         left="79%"
         rotate="-50"
       />
+      {/* 0 9 */}
+      <ArrowBody
+        w="9em"
+        top="40%"
+        left="15%"
+        rotate="-30"
+      />
+      {/* 0 8 */}
+      <ArrowBody
+        w="2em"
+        top="43%"
+        left="-1%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="2em"
+        top="43%"
+        left="41.5%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="17em"
+        top="43%"
+        left="22.5%"
+      />
+      {/* 9 10 */}
+      <ArrowBody
+        w="13em"
+        top="33%"
+        left="40%"
+        rotate="14"
+      />
+      {/* 9 11 */}
+      <ArrowBody
+        w="13em"
+        top="20%"
+        left="40%"
+        rotate="-10"
+      />
+      {/* 11 12 */}
+      <ArrowBody
+        w="2em"
+        top="15%"
+        left="60.5%"
+      />
+      {/* 12 13 */}
+      <ArrowBody
+        w="2em"
+        top="15%"
+        left="71.5%"
+      />
+      {/* 13 14 */}
+      <ArrowBody
+        w="2em"
+        top="15%"
+        left="82.5%"
+      />
+      {/* 14 15 */}
+      <ArrowBody
+        w="2em"
+        top="15%"
+        left="93.5%"
+      />
+      {/* 10 16 */}
+      <ArrowBody
+        w="4.5em"
+        top="47%"
+        left="62%"
+        rotate="20"
+      />
+      {/* 11 17 */}
+      <ArrowBody
+        w="2em"
+        top="5%"
+        left="53%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="14em"
+        top="39%"
+        left="103%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="20em"
+        top="5%"
+        left="80.5%"
+      />
+      <ArrowBody
+        w="7em"
+        top="83%"
+        left="96.5%"
+      />
+      {/* 17 -1 */}
+      <ArrowBody
+        w="4em"
+        top="72%"
+        left="96.5%"
+        rotate="-25"
+      />
+      {/* 18 -1 */}
+      <ArrowBody
+        w="6em"
+        top="58%"
+        left="90%"
+        rotate="30"
+      />
+      {/* 15 16 */}
+      <ArrowBody
+        w="3em"
+        top="15%"
+        left="97%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="4em"
+        top="35%"
+        left="68.5%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="11.5em"
+        top="29%"
+        left="85%"
+      />
+      {/* 11 16 */}
+      <ArrowBody
+        w="8em"
+        top="32%"
+        left="61%"
+        rotate="53"
+      />
+      {/* 11 -1 */}
+      <ArrowBody
+        w="1.5em"
+        top="17%"
+        left="53%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="14em"
+        top="26%"
+        left="73%"
+      />
+      {/* 14 -1 */}
+      <ArrowBody
+        w="10em"
+        top="35%"
+        left="91%"
+        rotate="65"
+      />
+      {/* 12 -1 */}
+      <ArrowBody
+        w="1.5em"
+        top="17%"
+        left="63.5%"
+        rotate="90"
+      />
+      {/* 13 -1 */}
+      <ArrowBody
+        w="1.5em"
+        top="17%"
+        left="74.5%"
+        rotate="90"
+      />
+      {/* 15 -1 */}
+      <ArrowBody
+        w="3.5em"
+        top="21%"
+        left="95.5%"
+        rotate="-20"
+      />
+      {/* 16 -1 */}
+      <ArrowBody
+        w="5em"
+        top="47%"
+        left="76%"
+        rotate="-40"
+      />
+      <ArrowBody
+        w="5.5em"
+        top="39%"
+        left="86.2%"
+      />
+      {/* 15 17 */}
+      <ArrowBody
+        w="5em"
+        top="27%"
+        left="96%"
+        rotate="90"
+      />
+      <ArrowBody
+        w="7em"
+        top="53%"
+        left="91.5%"
+        rotate="125"
+      />
 
       {/* ARROWS */}
-      {/* q6 q6 */}
-      {/* <ArrowLoopSm
-        top={["50%", "50%", "50%", null, null, "50%"]}
-        left={["42.5%", "42.5%", "44.4%", null, null, "46%"]}
-        rotate="360"
+      {/* 8 */}
+      <ArrowLoopSm
+        top="43.5%"
+        left="48%"
+        rotate="135"
       />
-      <ArrowLoopLg
-        top={["50%", "50%", "50%", null, null, "51%"]}
-        left={["42.5%", "42.5%", "44.4%", null, null, "45.7%"]}
-        rotate="20"
-      /> */}
-      {/* q7 q7 */}
-      {/* <ArrowLoopSm
-        top={["20%", "20%", "20%", null, null, "20%"]}
-        left={["67.3%", "67.3%", "65.6%", null, null, "64%"]}
+      {/* 5 */}
+      <ArrowLoopSm
+        top="83%"
+        left="49%"
+        rotate="50"
+      />
+      {/* 12 */}
+      <ArrowLoopSm
+        top="2%"
+        left="68%"
+        rotate="117"
+      />
+      {/* 10 */}
+      <ArrowLoopSm
+        top="26%"
+        left="53%"
+        rotate="50"
+      />
+      {/* 16 */}
+      <ArrowLoopSm
+        top="56%"
+        left="66.5%"
+        rotate="-40"
+      />
+      {/* 6 */}
+      <ArrowLoopSm
+        top="78%"
+        left="67%"
+        rotate="50"
+      />
+      {/* -1 */}
+      <ArrowLoopSm
+        top="53%"
+        left="102%"
+        rotate="117"
+      />
+      
+      {/* 0 1 */}
+      <ArrowHead
+        top="67%"
+        left="7%"
+        rotate="45"
+      />
+      {/* 1 2 */}
+      <ArrowHead
+        top="74.8%"
+        left="20%"
+      />
+      {/* 2 3 */}
+      <ArrowHead
+        top="74.8%"
+        left="35%"
+      />
+      {/* 3 4 */}
+      <ArrowHead
+        top="74.8%"
+        left="50%"
+      />
+      {/* 0 5 */}
+      <ArrowHead
+        top="90.8%"
+        left="45%"
+      />
+      {/* 1 5 */}
+      <ArrowHead
+        top="85%"
+        left="10.4%"
+        rotate="90"
+      />
+      {/* 2 5 */}
+      <ArrowHead
+        top="85%"
+        left="25.4%"
+        rotate="90"
+      />
+      {/* 3 5 */}
+      <ArrowHead
+        top="85%"
+        left="39.9%"
+        rotate="90"
+      />
+      {/* 5 6 */}
+      <ArrowHead
+        top="86%"
+        left="65%"
+        rotate="-10"
+      />
+      {/* 5 17 */}
+      <ArrowHead
+        top="96%"
+        left="60%"
+        rotate="15"
+      />
+      {/* 6 17 */}
+      <ArrowHead
+        top="96%"
+        left="71.5%"
+        rotate="80"
+      />
+      {/* 0 17 */}
+      <ArrowHead
+        top="97.8%"
+        left="85%"
+      />
+      {/* 0 7 */}
+      <ArrowHead
+        top="49.5%"
+        left="25%"
+      />
+      {/* 1 7 */}
+      <ArrowHead
+        top="54%"
+        left="10.4%"
+        rotate="-90"
+      />
+      {/* 2 7 */}
+      <ArrowHead
+        top="54%"
+        left="17.2%"
+        rotate="-130"
+      />
+      {/* 3 7 */}
+      <ArrowHead
+        top="54%"
+        left="23.2%"
+        rotate="-150"
+      />
+      {/* 7 5 */}
+      <ArrowHead
+        top="85%"
+        left="30.4%"
+        rotate="90"
+      />
+      {/* 0 8 */}
+      <ArrowHead
+        top="38%"
+        left="40%"
+      />
+      {/* 7 8 */}
+      <ArrowHead
+        top="49.5%"
+        left="40%"
+      />
+      {/* 8 16 */}
+      <ArrowHead
+        top="49.5%"
+        left="65%"
+      />
+      {/* 10 16 */}
+      <ArrowHead
+        top="44%"
+        left="65%"
+        rotate="35"
+      />
+      {/* 11 16 */}
+      <ArrowHead
+        top="40%"
+        left="66.5%"
+        rotate="60"
+      />
+      {/* 16 18 */}
+      <ArrowHead
+        top="47%"
+        left="80%"
+        rotate="-10"
+      />
+      {/* 4 18 */}
+      <ArrowHead
+        top="53%"
+        left="80%"
+        rotate="-30"
+      />
+      {/* 6 18 */}
+      <ArrowHead
+        top="58%"
+        left="80.5%"
+        rotate="-50"
+      />
+      {/* 16 17 */}
+      <ArrowHead
+        top="68%"
+        left="83.5%"
+        rotate="40"
+      />
+      {/* 18 -1 */}
+      <ArrowHead
+        top="60%"
+        left="96%"
+        rotate="40"
+      />
+      {/* 17 -1 */}
+      <ArrowHead
+        top="66.5%"
+        left="96%"
+        rotate="-40"
+      />
+      {/* 11 17 */}
+      <ArrowHead
+        top="78%"
+        left="96%"
+        rotate="-180"
+      />
+      {/* 14 -1 */}
+      <ArrowHead
+        top="50%"
+        left="96.8%"
+        rotate="65"
+      />
+      {/* 11 -1 */}
+      <ArrowHead
+        top="20.8%"
+        left="86%"
+      />
+      {/* 15 16 */}
+      <ArrowHead
+        top="23.8%"
+        left="86%"
         rotate="180"
       />
-      <ArrowLoopLg
-        top={["20%", "20%", "20%", null, null, "18.5%"]}
-        left={["67.3%", "67.3%", "65.6%", null, null, "64.3%"]}
-        rotate="200"
-      /> */}
-      {/* q2 q3 */}
-      {/* <ArrowHead
-        top={["19.6%", "19.6%", "20%", "20%", "20%", "20%"]}
-        left={["34.3%", "34.3%", "35.3%", "35.3%", "35.3%", "36.6%"]}
-      /> */}
-      {/* q4 q5 */}
-      {/* <ArrowHead
-        top={["79.3%", "79.3%", "79.9%", "79.9%", "79.9%", "79.9%"]}
-        left={["34.3%", "34.3%", "35.3%", "35.3%", "35.3%", "36.6%"]}
-      /> */}
-      {/* q1 q2 */}
-      {/* <ArrowHead
-        top={["29%", "29%", "29.2%", "29.2%", "29.2%", "27.7%"]}
-        left={["17.2%", "17.2%", "17.6%", "17.6%", "17.6%", "17.3%"]}
-        rotate={["-57", "-57", "-50", "-50", "-50", "-48"]}
-      /> */}
-      {/* q1 q4 */}
-      {/* <ArrowHead
-        top={["71%", "71%", "71.7%", "71.7%", "71.7%", "73.5%"]}
-        left={["17.4%", "17.4%", "17.3%", "17.3%", "17.3%", "17.1%"]}
-        rotate={["47", "47", "40", "40", "40", "40"]}
-      /> */}
-      {/* q2 t */}
-      {/* <ArrowHead
-        top={["41.6%", "41.6%", "41.7%", "41.7%", "41.7%", "42.6%"]}
-        left={["27.3%", "27.3%", "27.1%", "27.1%", "27.1%", "27.3%"]}
-        rotate={["47", "47", "40", "40", "40", "40"]}
-      /> */}
-      {/* q4 t */}
-      {/* <ArrowHead
-        top={["59.3%", "59.3%", "59.3%", "59.3%", "59.3%", "58.5%"]}
-        left={["27.4%", "27.4%", "27.3%", "27.3%", "27.3%", "27.5%"]}
-        rotate={["-59", "-59", "-50", "-50", "-50", "-48"]}
-      /> */}
-      {/* q5 t */}
-      {/* <ArrowHead
-        top={["58.4%", "58.4%", "58.2%", "58.2%", "58.2%", "58.2%"]}
-        left={["33.1%", "33.1%", "33.3%", "33.3%", "33.3%", "32.5%"]}
-        rotate={["235", "235", "230", "230", "230", "230"]}
-      /> */}
-      {/* q3 t */}
-      {/* <ArrowHead
-        top={["42%", "42%", "42%", "42%", "42%", "42%"]}
-        left={["33.2%", "33.2%", "33.2%", "33.2%", "33.2%", "32.5%"]}
-        rotate={["130", "130", "130", "130", "130", "130"]}
-      /> */}
-      {/* q3 q6 */}
-      {/* <ArrowHead
-        top={["41.8%", "41.8%", "41.7%", "41.7%", "41.7%", "42.8%"]}
-        left={["46.6%", "46.6%", "47.1%", "47.1%", "47.1%", "47.3%"]}
-        rotate={["50", "50", "40", "40", "40", "40"]}
-      /> */}
-      {/* q5 q6 */}
-      {/* <ArrowHead
-        top={["59.3%", "59.3%", "59.3%", "59.3%", "59.3%", "58.5%"]}
-        left={["47.2%", "47.2%", "47.4%", "47.4%", "47.4%", "47.5%"]}
-        rotate={["-59", "-59", "-50", "-50", "-50", "-48"]}
-      /> */}
-      {/* q6 q7 */}
-      {/* <ArrowHead
-        top={["29.6%", "29.6%", "29.2%", "29.2%", "29.2%", "27%"]}
-        left={["57.8%", "57.8%", "57.9%", null, null, "57.3%"]}
-        rotate={["-59", "-59", "-50", "-50", "-50", "-48"]}
-      /> */}
-      {/* q7 q8 */}
-      {/* <ArrowHead
-        top={["70%", "70%", "69.6%", null, null, "68.7%"]}
-        left={["60.2%", "60.2%", "60.3%", null, null, "60.1%"]}
+      {/* 16 -1*/}
+      <ArrowHead
+        top="33.7%"
+        left="86%"
+      />
+      {/* 15 -1*/}
+      <ArrowHead
+        top="18.5%"
+        left="92%"
+        rotate="160"
+      />
+      {/* 12 -1*/}
+      <ArrowHead
+        top="20%"
+        left="65.8%"
         rotate="90"
-      /> */}
-      {/* q8 q6 */}
-      {/* <ArrowHead
-        top={["59.3%", "59.3%", "58.3%", null, null, "58.3%"]}
-        left={["52.8%", "52.8%", "53.3%", null, null, "52.5%"]}
-        rotate={["240", "240", "230", "230", "230", "230"]}
-      /> */}
-      {/* q8 q9 */}
-      {/* <ArrowHead
-        top={["59.3%", "59.3%", "59.3%", "59.3%", "59.3%", "58.3%"]}
-        left={["67.6%", "67.6%", "67.4%", null, null, "67.4%"]}
-        rotate={["-64", "-64", "-50", "-50", "-50", "-48"]}
-      /> */}
-      {/* q9 q10 */}
-      {/* <ArrowHead
-        top={["50%", "50%", "49.7%", null, null, "49.7%"]}
-        left={["84%", "84%", "85.2%", null, null, "86.6%"]}
-      /> */}
+      />
+      {/* 13 -1*/}
+      <ArrowHead
+        top="20%"
+        left="76.8%"
+        rotate="90"
+      />
+      {/* 11 12 */}
+      <ArrowHead
+        top="10%"
+        left="62%"
+      />
+      {/* 12 13 */}
+      <ArrowHead
+        top="10%"
+        left="73%"
+      />
+      {/* 13 14 */}
+      <ArrowHead
+        top="10%"
+        left="84%"
+      />
+      {/* 14 15 */}
+      <ArrowHead
+        top="10%"
+        left="95%"
+      />
+      {/* 15 17 */}
+      <ArrowHead
+        top="66%"
+        left="90%"
+        rotate="130"
+      />
+      {/* 0 9 */}
+      <ArrowHead
+        top="25%"
+        left="22%"
+        rotate="-35"
+      />
+      {/* 9 11 */}
+      <ArrowHead
+        top="11%"
+        left="50%"
+        rotate="-20"
+      />
+      {/* 9 10 */}
+      <ArrowHead
+        top="33%"
+        left="50%"
+        rotate="25"
+      />
+      
       <Atom
         variant="q1"
         variants={variants}

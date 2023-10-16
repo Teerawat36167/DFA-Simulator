@@ -86,43 +86,43 @@ export const Badge = {
       borderColor: "purple.300",
     },
     q10: {
-      top: "30%",
-      left: "40%",
+      top: "20%",
+      left: "25%",
 
       borderColor: "purple.300",
     },
     q11: {
-      top: "38%",
+      top: "34%",
       left: "55%",
 
       borderColor: "purple.300",
     },
     q12: {
-      top: "18%",
+      top: "10%",
       left: "55%",
 
       borderColor: "purple.300",
     },
     q13: {
-      top: "18%",
+      top: "10%",
       left: "66%",
 
       borderColor: "purple.300",
     },
     q14: {
-      top: "18%",
+      top: "10%",
       left: "77%",
 
       borderColor: "purple.300",
     },
     q15: {
-      top: "18%",
+      top: "10%",
       left: "88%",
 
       borderColor: "purple.300",
     },
     q16: {
-      top: "18%",
+      top: "10%",
       left: "99%",
 
       borderColor: "purple.300",
