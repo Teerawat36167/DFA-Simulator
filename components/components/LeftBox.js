@@ -12,7 +12,7 @@ import { FaCheck } from "react-icons/fa";
 import { ImCross, ImOpera } from "react-icons/im";
 
 const LeftBox = ({
-  // handleTest,
+  handleTest,
   data,
   string,
   handleReset,
@@ -90,7 +90,8 @@ const LeftBox = ({
           <Flex justify="space-between" align="center">
             <Flex>
               <Button
-                onClick={handleSimulation}
+                // onClick={handleSimulation}
+                onClick={handleTest}
               >
                 Simulate
               </Button>
