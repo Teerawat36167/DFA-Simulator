@@ -21,25 +21,8 @@ const variants = {
   scale: { scale: 1.5 },
 };
 
-const FirstDFA = ({ simulating, input }) => {
+const FirstDFA = ({ simulating, currentNode }) => {
 
-  let currentNode = 0
-
-  const delay = ms => new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
-
-  const handleSimulate = async () => {
-    for (let i = 0; i < input.length; i++) {
-      currentNode = input[i];
-      // await delay(1000)
-      console.log(currentNode);
-    }
-  }
-
-  if (simulating) {
-    handleSimulate()
-  }
 
   return (
     <>

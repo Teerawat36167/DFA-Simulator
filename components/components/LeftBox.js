@@ -17,7 +17,7 @@ const LeftBox = ({
   // string,
   // handleReset,
   // handleTextChange,
-  // handleSimulation,
+  handleSimulation,
   // handleSimulate
   setSimulating
 }) => {
@@ -55,7 +55,7 @@ const LeftBox = ({
             <Flex justify="space-between" align="center">
               <Flex>
                 <Button
-                  onClick={() => setSimulating(true)}
+                  onClick={handleSimulation}
                 >
                   Simulate
                 </Button>
