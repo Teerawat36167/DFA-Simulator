@@ -1,100 +1,60 @@
-export class Node {
-  constructor(nodeNumber, direction1, direction2) {
-    this.nodeNumber = nodeNumber;
-    this.direction = [direction1, direction2];
-  }
-}
-
-export class DFA {
-  constructor(input, problem, language) {
-    this.input = input;
-    this.problem = problem;
-    this.language = language;
-
-    this.currentNode = 1;
-    this.currentInputPos = -1;
-    this.path = [1];
-
-    this.node();
-  }
-  node() {
-    this.currentInputPos += 1;
-    if (this.currentInputPos == "T") {
-      this.result = "Invalid";
-      // console.log("Invalid String TRAP");
-      // console.log("Path Taken:", this.path);
-    } else {
-      if (
-        this.currentNode < this.problem.length &&
-        this.input[this.currentInputPos] != undefined
-      ) {
-        let node = this.problem[this.currentNode - 1];
-        // console.log(this.path, this.input[this.currentInputPos]);
-
-        if (
-          this.input[this.currentInputPos] == "a" ||
-          this.input[this.currentInputPos] == "b" ||
-          this.input[this.currentInputPos] == "0" ||
-          this.input[this.currentInputPos] == "1"
-        ) {
-          this.currentNode =
-            node.direction[
-              this.language.indexOf(this.input[this.currentInputPos])
-            ];
-          // console.log(`currentNode: ${this.currentNode}`);
-          // console.log(
-          //   `node.direction[]: ${this.language.indexOf(
-          //     this.input[this.currentInputPos]
-          //   )}`
-          // );
-          this.currentNode != undefined && this.path.push(this.currentNode);
-        } else {
-          this.currentNode = "T";
-          // console.log(
-          //   "String contains a letter not in the language - ",
-          //   this.language
-          // );
-        }
-        this.node();
-      } else {
-        if (this.currentNode == this.problem.length) {
-          this.result = "Valid";
-          // console.log("Valid String");
-          // console.log("Path Taken", this.path);
-        } else {
-          this.result = "Invalid";
-          // console.log("Invalid String SHORT");
-          this.path.push("eos");
-          // console.log("Path Taken", this.path);
-        }
+function tokenize(buffer) {
+  const split = new Set(['(', ')', '{', '}', '[', ']', ',', ':', '+', '-', '*', '/', '%', '=', '\n']);
+  const DFA_table = {
+      "-1": { any: "-1" },
+      "0": { " ": "1", any: "5", split: "17", f: "7", '"': "8", "'": "9" },
+      "1": { " ": "2", f: "7", any: "5" },
+      "2": { " ": "3", f: "7", any: "5" },
+      "3": { " ": "4", f: "7", any: "5" },
+      "4": { any: "18" },
+      "5": { " ": "6", any: "5", split: "17" },
+      "6": { " ": "6", any: "18", split: "17" },
+      "7": { any: "5", '"': "8", "'": "9" },
+      "8": { '"': "16", any: "8" },
+      "9": { "'": "11", any: "10" },
+      "10": { "'": "16", any: "10" },
+      "11": { " ": "16", "'": "12", any: "-1", split: "17" },
+      "12": { "'": "13", any: "12" },
+      "13": { "'": "14", any: "-1" },
+      "14": { "'": "15", any: "-1" },
+      "15": { " ": "16", split: "17", any: "-1" },
+      "16": { " ": "16", any: "-1", split: "17", '"': "18", "'": "18" },
+      "17": { any: "-1" }, // final: consume split as token
+      "18": { any: "-1" } // final: not consume split as token
+  };
+  const finals = ["17", "18"];
+  const tokens = [];
+  let cursor = 0;
+  while (cursor < buffer.length) {
+      let state = "0";
+      let temp = "";
+      while (cursor < buffer.length) {
+          let ch = buffer[cursor];
+          if (split.has(ch)) {
+              ch = "split";
+          }
+          if (!DFA_table[state][ch]) {
+              ch = "any";
+          }
+          state = DFA_table[state][ch];
+          if (!finals.includes(state)) {
+              temp += buffer[cursor];
+          } else {
+              break;
+          }
+          cursor++;
       }
-    }
+
+      if (!finals.includes(state) && state !== "5") {
+          throw new Error(`Rejected at state ${state}`);
+      }
+      if (temp !== "") {
+          tokens.push(temp.trim() !== "    " ? temp : "    ");
+      }
+      if (state === finals[0]) {
+          tokens.push(buffer[cursor]);
+          cursor++;
+      }
   }
-}
-
-export const problem1 = [
-  new Node(1, 2, 4),
-  new Node(2, "T", 3),
-  new Node(3, 6, "T"),
-  new Node(4, 5, "T"),
-  new Node(5, "T", 6),
-  new Node(6, 6, 7),
-  new Node(7, 8, 7),
-  new Node(8, 6, 9),
-  new Node(9, 10, 10),
-  new Node(10, 10, 10),
-];
-
-export const problem2 = [
-  new Node(1, 2, 2),
-  new Node(2, 4, 3),
-  new Node(3, 7, 5),
-  new Node(4, 6, 3),
-  new Node(5, 7, 8),
-  new Node(6, 8, 3),
-  new Node(7, 6, 8),
-  new Node(8, 8, 8),
-];
-
-export const language1 = ["a", "b"];
-export const language2 = ["0", "1"];
+  return tokens;
+};

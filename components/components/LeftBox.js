@@ -12,12 +12,15 @@ import { FaCheck } from "react-icons/fa";
 import { ImCross, ImOpera } from "react-icons/im";
 
 const LeftBox = ({
+
   handleTest,
   data,
   string,
   handleReset,
   handleTextChange,
   handleSimulation,
+  // handleSimulate
+  setSimulating
 }) => {
   return (
     <>

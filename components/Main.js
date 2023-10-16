@@ -85,8 +85,23 @@ const Main = () => {
     setData("");
     closeAll();
   };
-  const handleSimulation = () => {
 
+  const inp = [1,2,3]
+
+  const handleSimulation = (e) => {
+    e.preventDefault();
+    const pathWithZeroes = [0].concat(...inp.map((e) => [e, 0]));
+    pathWithZeroes.some((node, i) => {
+      setTimeout(() => {
+        setCurrentNode(node)
+      },i*400)
+    })
+  }
+
+  const handleTest = (e) => {
+    if (input == "") {
+      notInLanguageToast();
+    }
   }
 
   const handleTest = (e) => {
@@ -109,6 +124,7 @@ const Main = () => {
         // simulating={simulating}
         handleSimulation={handleSimulation}
         handleReset={handleReset}
+        setSimulating={setSimulating}
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}
