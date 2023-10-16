@@ -1,7 +1,7 @@
 import { Flex, useToast, Divider } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { DFA, problem1,language1} from "./DFA/Logic";
+import { DFA, problem1, language1 } from "./DFA/Logic";
 import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
 
