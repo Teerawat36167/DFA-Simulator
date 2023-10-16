@@ -9,14 +9,15 @@ import {
 } from "@chakra-ui/react";
 
 import { FaCheck } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
+import { ImCross, ImOpera } from "react-icons/im";
 
 const LeftBox = ({
-  // handleTest,
-  // data,
-  // string,
-  // handleReset,
-  // handleTextChange,
+
+  handleTest,
+  data,
+  string,
+  handleReset,
+  handleTextChange,
   handleSimulation,
   // handleSimulate
   setSimulating
@@ -38,35 +39,73 @@ const LeftBox = ({
         <Divider mb="6" />
 
         <Box>
+          <Flex align="center">
+            <Heading>Input String:</Heading>
             <Flex align="center">
-              <Heading>Input String:</Heading>
-            </Flex>
-            {/* <textarea
-              
-            /> */}
-            <Input
-              maxLength="500"
-              fontSize={["0.7em", "0.7em", "0.9em"]}
-              my={3}
-              placeholder={"e.g. babbabab"}
-              // value={string}
-              // onChange={handleTextChange}
-            />
-            <Flex justify="space-between" align="center">
-              <Flex>
+              {data && (
                 <Button
-                  onClick={handleSimulation}
+                  variant="data"
+                  rightIcon={
+                    data.result == "Valid" ? (
+                      <Box color="teal.300">
+                        <FaCheck />
+                      </Box>
+                    ) : (
+                      data.result == "Invalid" && (
+                        <Box color="pink.300">
+                          <ImCross />
+                        </Box>
+                      )
+                    )
+                  }
                 >
-                  Simulate
+                  {data.result}
                 </Button>
-                <Button
-                  variant="clear"
-                  // onClick={handleReset}
-                >
-                  Clear
-                </Button>
-              </Flex>
+              )}
             </Flex>
+          </Flex>
+          <textarea
+            style={{
+              fontSize: ["0.7em", "0.7em", "0.9em"],
+              margin: "1rem 0",
+              width: "100%",
+              fontFamily: "monospace",
+              fontSize: "14px",
+              color: "#000",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              padding: "10px"
+            }}
+            placeholder={"# Your Python code here\n\tdef hello_world():\n\t\tprint(\"Hello, World!\")\n\tfor i in range(5):\n\t\tprint(i)"}
+            value={string}
+            onChange={handleTextChange}
+            rows={4}
+            cols={50}
+          />
+          {/* <Input
+            maxLength="500"
+            fontSize={["0.7em", "0.7em", "0.9em"]}
+            my={3}
+            placeholder={"e.g. babbabab"}
+            value={string}
+            onChange={handleTextChange}
+          /> */}
+          <Flex justify="space-between" align="center">
+            <Flex>
+              <Button
+                // onClick={handleSimulation}
+                onClick={handleTest}
+              >
+                Simulate
+              </Button>
+              <Button
+                variant="clear"
+                onClick={handleReset}
+              >
+                Clear
+              </Button>
+            </Flex>
+          </Flex>
         </Box>
       </Box>
     </>

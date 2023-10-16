@@ -104,6 +104,12 @@ const Main = () => {
     }
   }
 
+  const handleTest = (e) => {
+    if (input == "") {
+      notInLanguageToast();
+    }
+  }
+
   return (
     <Flex
       direction={["column", "column", "column", "column", "column", "row"]}
