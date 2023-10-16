@@ -4,7 +4,11 @@ import FirstDFA from "../DFA/FirstDFA";
 const RightBox = ({
   simulating,
   currentNode,
+  input
 }) => {
+
+  console.log('current', currentNode)
+
   return (
     <>
       <Flex
@@ -18,7 +22,7 @@ const RightBox = ({
           borderBottom="solid 1px"
           borderColor="gray.200"
         >
-          <FirstDFA currentNode={currentNode} simulating={simulating} />
+          <FirstDFA currentNode={currentNode} simulating={simulating} input={input}/>
         </Flex>
       </Flex>
     </>

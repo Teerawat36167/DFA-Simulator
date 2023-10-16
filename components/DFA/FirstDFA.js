@@ -11,7 +11,7 @@ const Atom = motion(Badge);
 
 const variants = {
   initial: { y: "-50%", x: "-50%" },
-  pulse: { scale: 5, transition: { duration: 0.6 } },
+  pulse: { scale: 2, transition: { duration: 0.6 } },
   bounce: {
     y: ["-50%", "-200%", "-50%"],
     x: ["-50%", "-50%", "-50%"],
@@ -21,7 +21,26 @@ const variants = {
   scale: { scale: 1.5 },
 };
 
-const FirstDFA = ({ currentNode, simulating }) => {
+const FirstDFA = ({ simulating, input }) => {
+
+  let currentNode = 0
+
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
+  const handleSimulate = async () => {
+    for (let i = 0; i < input.length; i++) {
+      currentNode = input[i];
+      // await delay(1000)
+      console.log(currentNode);
+    }
+  }
+
+  if (simulating) {
+    handleSimulate()
+  }
+
   return (
     <>
       {/* LETTERS */}

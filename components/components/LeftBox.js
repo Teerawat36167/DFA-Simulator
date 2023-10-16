@@ -13,11 +13,13 @@ import { ImCross } from "react-icons/im";
 
 const LeftBox = ({
   // handleTest,
-  data,
-  string,
-  handleReset,
-  handleTextChange,
-  handleSimulation,
+  // data,
+  // string,
+  // handleReset,
+  // handleTextChange,
+  // handleSimulation,
+  // handleSimulate
+  setSimulating
 }) => {
   return (
     <>
@@ -38,28 +40,6 @@ const LeftBox = ({
         <Box>
             <Flex align="center">
               <Heading>Input String:</Heading>
-              <Flex align="center">
-                {data && (
-                  <Button
-                    variant="data"
-                    rightIcon={
-                      data.result == "Valid" ? (
-                        <Box color="teal.300">
-                          <FaCheck />
-                        </Box>
-                      ) : (
-                        data.result == "Invalid" && (
-                          <Box color="pink.300">
-                            <ImCross />
-                          </Box>
-                        )
-                      )
-                    }
-                  >
-                    {data.result}
-                  </Button>
-                )}
-              </Flex>
             </Flex>
             {/* <textarea
               
@@ -69,19 +49,19 @@ const LeftBox = ({
               fontSize={["0.7em", "0.7em", "0.9em"]}
               my={3}
               placeholder={"e.g. babbabab"}
-              value={string}
-              onChange={handleTextChange}
+              // value={string}
+              // onChange={handleTextChange}
             />
             <Flex justify="space-between" align="center">
               <Flex>
                 <Button
-                  onClick={handleSimulation}
+                  onClick={() => setSimulating(true)}
                 >
                   Simulate
                 </Button>
                 <Button
                   variant="clear"
-                  onClick={handleReset}
+                  // onClick={handleReset}
                 >
                   Clear
                 </Button>

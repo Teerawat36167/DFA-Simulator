@@ -7,29 +7,26 @@ import RightBox from "./components/RightBox";
 
 const Main = () => {
 
-  const [string, setString] = useState("");
-  const [data, setData] = useState("");
+  // const [string, setString] = useState("");
+  // const [data, setData] = useState([]);
 
-  const [currentNode, setCurrentNode] = useState(0);
+  // const [currentNode, setCurrentNode] = useState(0);
   const [simulating, setSimulating] = useState(false);
 
-  const closeToasts = useToast();
+  // const handleTextChange = (e) => {
+  //   const stringValue = e.target.value;
+  //   setString(stringValue);
+  // };
+  // const handleReset = () => {
+  //   setString("");
+  //   setData("");
+  //   closeAll();
+  // };
+  // const handleSimulation = () => {
 
-  let input = string;
-  let results = "";
+  // }
 
-  const handleTextChange = (e) => {
-    const stringValue = e.target.value;
-    setString(stringValue);
-  };
-  const handleReset = () => {
-    setString("");
-    setData("");
-    closeAll();
-  };
-  const handleSimulation = () => {
-
-  }
+  const input = [1,2,3]
 
   return (
     <Flex
@@ -38,23 +35,25 @@ const Main = () => {
     >
       {/* top */}
       <LeftBox
+        setSimulating={setSimulating}
+        // handleSimulate={handleSimulate}
         // handleTest={handleTest}
-        data={data}
-        string={string}
-        handleTextChange={handleTextChange}
+        // data={data}
+        // string={string}
+        // handleTextChange={handleTextChange}
         // simulating={simulating}
-        handleSimulation={handleSimulation}
-        handleReset={handleReset}
+        // handleSimulation={handleSimulation}
+        // handleReset={handleReset}
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}
         mt="6"
         mb="2"
       />
-      {/* butttom */}
+      {/* bottom */}
       <RightBox
         simulating={simulating}
-        currentNode={currentNode}
+        input={input}
       />
     </Flex>
   );
