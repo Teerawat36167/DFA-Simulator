@@ -20,8 +20,10 @@ const LeftBox = ({
   handleTextChange,
   handleSimulation,
   // handleSimulate
-  setSimulating
+  setSimulating,
+  output
 }) => {
+
   return (
     <>
       <Box
@@ -41,7 +43,7 @@ const LeftBox = ({
         <Box>
           <Flex align="center">
             <Heading>Input String:</Heading>
-            <Flex align="center">
+            {/* <Flex align="center">
               {data && (
                 <Button
                   variant="data"
@@ -62,7 +64,7 @@ const LeftBox = ({
                   {data.result}
                 </Button>
               )}
-            </Flex>
+            </Flex> */}
           </Flex>
           <textarea
             style={{
@@ -106,6 +108,23 @@ const LeftBox = ({
               </Button>
             </Flex>
           </Flex>
+          <Flex align="center">
+            <Heading>Output String:</Heading>
+          </Flex>
+          <div style={{
+              fontSize: ["0.7em", "0.7em", "0.9em"],
+              margin: "1rem 0",
+              height: "8rem",
+              width: "100%",
+              fontFamily: "monospace",
+              fontSize: "14px",
+              color: "#000",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              padding: "10px"
+            }}>
+            {output}
+          </div>
         </Box>
       </Box>
     </>

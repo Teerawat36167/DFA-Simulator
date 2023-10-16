@@ -26,86 +26,168 @@ const FirstDFA = ({ simulating, currentNode }) => {
   return (
     <>
       {/* LETTERS */}
-      {/* q2 q3 */}
-      {/* <Text size="label" top="15%" left="30%">
-        b
-      </Text> */}
-      {/* q1 q2 */}
-      {/* <Text top="31%" left="14%" size="label">
-        a
-      </Text> */}
-      {/* q2 t */}
-      {/* <Text top="31%" left="26%" size="label">
-        a
-      </Text> */}
-      {/* q4 t */}
-      {/* <Text top="69%" left="26%" size="label">
-        b
-      </Text> */}
-      {/* q5 t */}
-      {/* <Text top="69%" left="34%" size="label">
-        a
-      </Text> */}
-      {/* q3 t */}
-      {/* <Text top="31%" left="34%" size="label">
-        b
-      </Text> */}
-      {/* q1 q4 */}
-      {/* <Text top="69%" left="14%" size="label">
-        b
-      </Text> */}
-      {/* q4 q5 */}
-      {/* <Text top="83%" left="30%" size="label">
-        a
-      </Text> */}
-      {/* q5 q6 */}
-      {/* <Text top="69%" left="46%" size="label">
-        b
-      </Text> */}
-      {/* q8 q6 */}
-      {/* <Text top="69%" left="54%" size="label">
-        a
-      </Text> */}
-      {/* q8 q9 */}
-      {/* <Text top="69%" left="66%" size="label">
-        b
-      </Text> */}
-      {/* q3 q6 */}
-      {/* <Text top="31%" left="46%" size="label">
-        a
-      </Text> */}
-      {/* q6 q7 */}
-      {/* <Text top="31%" left="54%" size="label">
-        b
-      </Text> */}
-      {/* q6 q6 */}
-      {/* <Text
-        top={["45%", "45%", "50%", "50%", "50%", "50%"]}
-        left={["40%", "40%", "42%", null, null, "43%"]}
-        size="label"
-      >
-        a
-      </Text> */}
-      {/* q9 q10 */}
-      {/* <Text top="45%" left="80%" size="label">
-        a,b
-      </Text> */}
-      {/* q7 q7 */}
-      {/* <Text
-        top="19.5%"
-        left={["71%", "71%", "68%", null, null, "67%"]}
-        size="label"
-      >
-        b
-      </Text> */}
-      {/* q7 q8 */}
-      {/* <Text
-        top="50%"
-        left={["58.5%", "58.5%", "59%", null, null, "59%"]}
-        size="label"
-      >
-        a
-      </Text> */}
+
+      {/* 0 7 */}
+      <Text size="label" fontSize="md" top="45%" left="20%">
+        f
+      </Text>
+      {/* 0 1 */}
+      <Text top="60%" left="5%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 1 2 */}
+      <Text top="71%" left="17%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 2 3 */}
+      <Text top="71%" left="32%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 3 4 */}
+      <Text top="71%" left="47%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 0 5 */}
+      <Text top="87%" left="17%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 0 17 */}
+      <Text top="95%" left="80%" fontSize="xs" size="label">
+        split
+      </Text>
+      {/* 5 */}
+      <Text top="80%" left="46.5%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 6 */}
+      <Text top="74%" left="67%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 8 */}
+      <Text top="40%" left="50%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 9 10 */}
+      <Text top="25%" left="42%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 10 */}
+      <Text top="23%" left="50%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 12 */}
+      <Text top="1%" left="71%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* -1 */}
+      <Text top="48%" left="103%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 16 */}
+      <Text top="56%" left="63%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 4 18 */}
+      <Text top="65%" left="63%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 11 17 */}
+      <Text top="-3%" left="80%" fontSize="xs" size="label">
+        split
+      </Text>
+      {/* 15 16 */}
+      <Text top="25%" left="80%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 15 -1 */}
+      <Text top="17%" left="95%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 11 -1 */}
+      <Text top="17%" left="82%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 5 6 */}
+      <Text top="84%" left="60%" fontSize="xs" size="label">
+        space
+      </Text>
+      {/* 16 -1 */}
+      <Text top="17%" left="82%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 6 18 */}
+      <Text top="70%" left="75%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 16 17 */}
+      <Text top="64%" left="84%" fontSize="xs" size="label">
+        split
+      </Text>
+      {/* 15 17 */}
+      <Text top="30%" left="100.5%" fontSize="xs" size="label">
+        split
+      </Text>
+      {/* 17 -1 */}
+      <Text top="69%" left="95%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 18 -1 */}
+      <Text top="48%" left="90%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 16 -1 */}
+      <Text top="35%" left="90%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 14 -1 */}
+      <Text top="29%" left="94%" fontSize="xs" size="label">
+        any
+      </Text>
+      {/* 7 8 */}
+      <Text top="48%" left="38%" fontSize="2xl" size="label">
+        "
+      </Text>
+      {/* 0 8 */}
+      <Text top="37%" left="36%" fontSize="2xl" size="label">
+        "
+      </Text>
+      {/* 0 9 */}
+      <Text top="30%" left="17%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 9 11 */}
+      <Text top="12%" left="42%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 10 16 */}
+      <Text top="40%" left="62%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 11 12 */}
+      <Text top="9%" left="60%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 12 13 */}
+      <Text top="9%" left="71%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 13 14 */}
+      <Text top="9%" left="82%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 14 15 */}
+      <Text top="9%" left="93%" fontSize="2xl" size="label">
+        '
+      </Text>
+      {/* 8 16 */}
+      <Text top="48%" left="58%" fontSize="2xl" size="label">
+        "
+      </Text>
+      {/* 16 18 */}
+      <Text top="45%" left="77%" fontSize="2xl" size="label">
+        ' "
+      </Text>
+
       {/* ARROW BODY */}
       {/* 0 1*/}
       <ArrowBody

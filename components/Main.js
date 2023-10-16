@@ -11,6 +11,7 @@ const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
+  const [outputString,setOutputString] = useState([])
 
   const [currentNode, setCurrentNode] = useState();
   const [simulating, setSimulating] = useState(false);
@@ -91,7 +92,7 @@ const Main = () => {
 
   const handleSimulation = (e) => {
     const output = tokenize(string)
-    console.log(output)
+    setOutputString(output[1])
     e.preventDefault();
     const pathWithZeroes = [0].concat(...output[0][0].map((e) => [e,null]));
     pathWithZeroes.some((node, i) => {
@@ -101,14 +102,14 @@ const Main = () => {
       },i*400)
     })
   }
-
-
+  
   const handleTest = (e) => {
     if (input == "") {
       notInLanguageToast();
     }
   }
-
+  
+  console.log(outputString)
   return (
     <Flex
       direction={["column", "column", "column", "column", "column", "row"]}
@@ -124,6 +125,7 @@ const Main = () => {
         handleSimulation={handleSimulation}
         handleReset={handleReset}
         setSimulating={setSimulating}
+        output={outputString}
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}
