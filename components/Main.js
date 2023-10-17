@@ -1,17 +1,18 @@
 import { Flex, useToast, Divider } from "@chakra-ui/react";
 import { useState } from "react";
 
-import { DFA, problem1, language1 } from "./DFA/Tokenize";
 import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
 import { tokenize } from "./DFA/Tokenize";
 
 const Main = () => {
-
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
-  const [outputString,setOutputString] = useState("")
+  const [outputString, setOutputString] = useState("");
+  const [outputList, setOutputList] = useState([]);
+
+  // {value: , check:}
 
   const [currentNode, setCurrentNode] = useState();
   const [simulating, setSimulating] = useState(false);
@@ -88,57 +89,70 @@ const Main = () => {
     closeAll();
   };
 
-  // const inp = [1,2,3]
-
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   const addOutputStr = (listStr) => {
-    let temp = "[ ' "
+    let temp = "[ ' ";
     for (let i = 0; i < listStr.length; i++) {
-      temp = temp + listStr[i] + " ' "
-      if (i != listStr.length-1) {
-        temp += " ' "
+      temp = temp + listStr[i] + " ' ";
+      if (i != listStr.length - 1) {
+        temp += ", ' ";
       }
     }
-    temp = temp + ' ]'
-    setOutputString(temp)
-  }
+    temp = temp + " ]";
+    setOutputString(temp);
+  };
 
-  const handleSimulation = (e) => {
-    const output = tokenize(string)
-    console.log(output[1]);
-    addOutputStr(output[1])
-    const allPath = output[0]
-    e.preventDefault();
-    let walking = []
-    for (let i = 0; i < allPath.length; i++) walking = walking.concat(allPath[i])
-    const pathWithZeroes = [0].concat(...walking.map((e) => [e, null]));
+  const addOutputList = (output) => {
+    let i = 0;
+    const t = output
+      .map((o) => {
+        if (o != "(" && o != ")") {
+          return { value: o, check: false, id: i++ };
+        }
+      })
+      .filter((e) => e !== undefined);
+    setOutputList(t);
+    return t;
+  };
 
-    pathWithZeroes.some( (node, i) => {
-      if (node == 17) {
-        setTimeout(() => {
-          setCurrentNode(node)
-          console.log("node")
-        }, i * 500)
-      } else {
-        setTimeout(() => {
-          setCurrentNode(node)
-          console.log(node)
-        }, i * 500)
-      }
-    })
-  }
+  const handleSimulation = () => {
+    const output = tokenize(string);
+    addOutputList(output[1]);
+    addOutputStr(output[1]);
+    const allPath = output[0];
+    let walking = [];
+    for (let i = 0; i < allPath.length; i++)
+      walking = walking.concat(allPath[i]);
+    const pathWithZeroes = [].concat(...walking.map((e) => [e, null]));
+    let templist = [...outputList];
+    //ลองเปิดนี่ แล้ว refresh
+    // console.log(1,outputList);
+    // console.log(2,templist);
+    pathWithZeroes.some((node, i) => {
+      setTimeout(() => {
+        if (node === "0") {
+          let item = templist[0];
+          templist.shift();
+          setOutputList(
+            outputList.map((e) => {
+              console.log(e);
+              if (item.id === e.id) {
+                e.check = true;
+              }
+              return e;
+            })
+          );
+        }
+        setCurrentNode(node);
+      }, i * 500);
+    });
+  };
 
-  
   const handleTest = (e) => {
     if (input == "") {
       notInLanguageToast();
     }
-  }
-  
-  console.log(outputString)
+  };
+
   return (
     <Flex
       direction={["column", "column", "column", "column", "column", "row"]}
@@ -154,7 +168,8 @@ const Main = () => {
         handleSimulation={handleSimulation}
         handleReset={handleReset}
         setSimulating={setSimulating}
-        output={outputString}
+        outputString={outputString}
+        outputList={outputList}
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}
@@ -162,10 +177,7 @@ const Main = () => {
         mb="2"
       />
       {/* butttom */}
-      <RightBox
-        simulating={simulating}
-        currentNode={currentNode}
-      />
+      <RightBox simulating={simulating} currentNode={currentNode} />
     </Flex>
   );
 };
