@@ -11,7 +11,7 @@ const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
-  const [outputString,setOutputString] = useState([])
+  const [outputString,setOutputString] = useState("")
 
   const [currentNode, setCurrentNode] = useState();
   const [simulating, setSimulating] = useState(false);
@@ -94,14 +94,26 @@ const Main = () => {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  const addOutputStr = (listStr) => {
+    let temp = "[ ' "
+    for (let i = 0; i < listStr.length; i++) {
+      temp = temp + listStr[i] + " ' "
+      if (i != listStr.length-1) {
+        temp += " ' "
+      }
+    }
+    temp = temp + ' ]'
+    setOutputString(temp)
+  }
+
   const handleSimulation = (e) => {
     const output = tokenize(string)
-    setOutputString(output[1])
+    console.log(output[1]);
+    addOutputStr(output[1])
     const allPath = output[0]
     e.preventDefault();
     let walking = []
     for (let i = 0; i < allPath.length; i++) walking = walking.concat(allPath[i])
-
     const pathWithZeroes = [0].concat(...walking.map((e) => [e, null]));
 
     pathWithZeroes.some( (node, i) => {
@@ -118,6 +130,7 @@ const Main = () => {
       }
     })
   }
+
   
   const handleTest = (e) => {
     if (input == "") {
