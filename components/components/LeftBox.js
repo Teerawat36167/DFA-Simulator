@@ -58,7 +58,7 @@ const LeftBox = ({
                   color: "#000",
                   border: "1px solid #ccc",
                   borderRadius: "5px",
-                  padding: "10px"
+                  padding: "10px",
                 }}
                 placeholder={"# Your Python code here\n\tdef hello_world():\n\t\tprint(\"Hello, World!\")\n\tfor i in range(5):\n\t\tprint(i)"}
                 value={string}
@@ -96,7 +96,8 @@ const LeftBox = ({
                   color: "#000",
                   border: "1px solid #ccc",
                   borderRadius: "5px",
-                  padding: "10px"
+                  padding: "10px",
+                  overflow: "scroll"
                 }}>
                 {outputString}
               </div>
