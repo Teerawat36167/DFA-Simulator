@@ -179,6 +179,10 @@ const FirstDFA = ({ simulating, currentNode }) => {
       <Text top="9%" left="93%" fontSize="2xl" size="label">
         '
       </Text>
+      {/* 7 9 */}
+      <Text top="33%" left="28%" fontSize="2xl" size="label">
+        '
+      </Text>
       {/* 8 16 */}
       <Text top="48%" left="58%" fontSize="2xl" size="label">
         "
@@ -532,6 +536,13 @@ const FirstDFA = ({ simulating, currentNode }) => {
         left="95.5%"
         rotate="-20"
       />
+      {/* 7 9 */}
+      <ArrowBody
+        w="5em"
+        top="35%"
+        left="25%"
+        rotate="60"
+      />
       {/* 16 -1 */}
       <ArrowBody
         w="5em"
@@ -607,6 +618,12 @@ const FirstDFA = ({ simulating, currentNode }) => {
         top="67%"
         left="7%"
         rotate="45"
+      />
+      {/* 7 9 */}
+      <ArrowHead
+        top="30%"
+        left="26.3%"
+        rotate="-125"
       />
       {/* 1 2 */}
       <ArrowHead
