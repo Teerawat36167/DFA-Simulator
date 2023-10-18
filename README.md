@@ -1,6 +1,6 @@
 # Python Tokenizer Visualization
 A **Next** application for simulating paths DFA of python programming.
-- https://dfa-simulator.vercel.app/
+- [https://dfa-simulator.vercel.app/](https://python-tokenizer-visualization-pe2h-hmhg7syym-teerawat36167.vercel.app/)
 - Deployed with [Vercel](https://vercel.com/solutions/nextjs)
 
 ## Deterministic Finite Automaton (DFA)
