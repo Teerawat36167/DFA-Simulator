@@ -9,7 +9,8 @@ const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
-  const [index, setIndex] = useState(-1);
+  let num = 0
+  const [index, setIndex] = useState(0);
   const [outputString, setOutputString] = useState("");
   const [outputList, setOutputList] = useState([]);
 
@@ -17,7 +18,7 @@ const Main = () => {
 
   const [currentNode, setCurrentNode] = useState();
   const [simulating, setSimulating] = useState(false);
-
+  let i =1
   const closeToasts = useToast();
   const validString = useToast();
   const trapString = useToast();
@@ -27,11 +28,13 @@ const Main = () => {
   let input = string;
   let results = "";
   useEffect(()=>{
-setOutputList(
+    setOutputList(
             outputList.map((e) => {
-              console.log(e);
-              if (index === e.id) {
-                e.check = true;
+              if ((index-1) === e.id) {
+                if(index != 0){
+
+                  e.check = true;
+                }
               }
               return e;
             })
@@ -68,6 +71,16 @@ setOutputList(
       isClosable: true,
     });
   };
+
+  const myLoop = () => {         //  create a loop function
+    setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+      console.log(i);   //  your code here
+      i++;                    //  increment the counter
+      if (i < 10) {           //  if the counter < 10, call the loop function
+        myLoop();             //  ..  again which will trigger another 
+      }                       //  ..  setTimeout()
+    }, 3000)
+  }
 
   const handleValid = () => {
     // console.log("DONE OK");
@@ -126,27 +139,37 @@ setOutputList(
   };
 
   const handleSimulation = () => {
-    setIndex(-1)
+    setIndex(num)
+    myLoop()
+    // console.log(num)
+
     const output = tokenize(string);
     addOutputList(output[1]);
     addOutputStr(output[1]);
-    console.log(output)
     const allPath = output[0];
     let walking = [];
     for (let i = 0; i < allPath.length; i++)
       walking = walking.concat(allPath[i]);
     const pathWithZeroes = [].concat(...walking.map((e) => [e, null]));
     let templist = outputList;
-    // console.log(templist);
+
     
+
     pathWithZeroes.some((node, i) => {
       setTimeout(() => {
-        if (node === "0") {
-          setIndex(index+1)
+        if ((node === "0") && (i != 0) ) {
+          // setOutputList(outputList.map((e)=>{
+          //   e.check = true
+          // }))
+          num = num+1
+          setIndex(num)
         }
-        console.log(node)
+        if(pathWithZeroes.length == (i+1)){
+          setIndex(num+1)
+          console.log("finish")
+        }
         setCurrentNode(node);
-      }, i * 500);
+      }, i * 200);
     });
   };
 
