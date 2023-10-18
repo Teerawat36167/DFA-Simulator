@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
 import { tokenize } from "./DFA/Tokenize";
-
+import { useRouter } from "next/dist/client/router";
 const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
@@ -13,6 +13,7 @@ const Main = () => {
   const [index, setIndex] = useState(0);
   const [outputString, setOutputString] = useState("");
   const [outputList, setOutputList] = useState([]);
+  const [visibleButton, setVisibleButton] = useState(true)
 
   // {value: , check:}
 
@@ -24,7 +25,7 @@ const Main = () => {
   const trapString = useToast();
   const shortString = useToast();
   const notInLanguageString = useToast();
-
+  const router = useRouter();
   let input = string;
   let results = "";
   useEffect(()=>{
@@ -72,16 +73,6 @@ const Main = () => {
     });
   };
 
-  const myLoop = () => {         //  create a loop function
-    setTimeout(function() {   //  call a 3s setTimeout when the loop is called
-      console.log(i);   //  your code here
-      i++;                    //  increment the counter
-      if (i < 10) {           //  if the counter < 10, call the loop function
-        myLoop();             //  ..  again which will trigger another 
-      }                       //  ..  setTimeout()
-    }, 3000)
-  }
-
   const handleValid = () => {
     // console.log("DONE OK");
     setSimulating(false);
@@ -108,6 +99,7 @@ const Main = () => {
     setCount(countValue);
   };
   const handleReset = () => {
+    router.reload();
     setString("");
     setData("");
     closeAll();
@@ -116,6 +108,9 @@ const Main = () => {
   const addOutputStr = (listStr) => {
     let temp = "[ ' ";
     for (let i = 0; i < listStr.length; i++) {
+      if (listStr[i] == '\n') {
+        temp += "\\n"
+      }
       temp = temp + listStr[i] + " ' ";
       if (i != listStr.length - 1) {
         temp += ", ' ";
@@ -129,6 +124,9 @@ const Main = () => {
     let i = 0;
     const t = output
       .map((o) => {
+        if (o == "\n") {
+          return {value: "\\n", check: false, id: i++ }
+        }
         if (o != "(" && o != ")") {
           return { value: o, check: false, id: i++ };
         }
@@ -140,33 +138,28 @@ const Main = () => {
 
   const handleSimulation = () => {
     setIndex(num)
-    myLoop()
-    // console.log(num)
-
+    setVisibleButton(false)
     const output = tokenize(string);
+    console.log(output[1]);
     addOutputList(output[1]);
+    console.log(3,outputList);
     addOutputStr(output[1]);
     const allPath = output[0];
     let walking = [];
     for (let i = 0; i < allPath.length; i++)
       walking = walking.concat(allPath[i]);
     const pathWithZeroes = [].concat(...walking.map((e) => [e, null]));
-    let templist = outputList;
-
-    
 
     pathWithZeroes.some((node, i) => {
       setTimeout(() => {
         if ((node === "0") && (i != 0) ) {
-          // setOutputList(outputList.map((e)=>{
-          //   e.check = true
-          // }))
           num = num+1
           setIndex(num)
         }
         if(pathWithZeroes.length == (i+1)){
           setIndex(num+1)
           console.log("finish")
+          setVisibleButton(true)
         }
         setCurrentNode(node);
       }, i * 200);
@@ -178,6 +171,8 @@ const Main = () => {
       notInLanguageToast();
     }
   };
+
+  console.log(visibleButton);
 
   return (
     <Flex
@@ -196,6 +191,7 @@ const Main = () => {
         setSimulating={setSimulating}
         outputString={outputString}
         outputList={outputList}
+        visibleButton={visibleButton}
       />
       <Divider
         display={["block", null, "block", null, null, "none"]}
