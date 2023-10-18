@@ -1,5 +1,5 @@
 import { Flex, useToast, Divider } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
@@ -9,6 +9,7 @@ const Main = () => {
   const [string, setString] = useState("");
   const [data, setData] = useState("");
   const [count, setCount] = useState(0);
+  const [index, setIndex] = useState(-1);
   const [outputString, setOutputString] = useState("");
   const [outputList, setOutputList] = useState([]);
 
@@ -25,7 +26,17 @@ const Main = () => {
 
   let input = string;
   let results = "";
-
+  useEffect(()=>{
+setOutputList(
+            outputList.map((e) => {
+              console.log(e);
+              if (index === e.id) {
+                e.check = true;
+              }
+              return e;
+            })
+          );
+  },[index])
   const closeAll = () => {
     closeToasts.closeAll();
   };
@@ -115,33 +126,25 @@ const Main = () => {
   };
 
   const handleSimulation = () => {
+    setIndex(-1)
     const output = tokenize(string);
     addOutputList(output[1]);
     addOutputStr(output[1]);
+    console.log(output)
     const allPath = output[0];
     let walking = [];
     for (let i = 0; i < allPath.length; i++)
       walking = walking.concat(allPath[i]);
     const pathWithZeroes = [].concat(...walking.map((e) => [e, null]));
-    let templist = [...outputList];
-    //ลองเปิดนี่ แล้ว refresh
-    // console.log(1,outputList);
-    // console.log(2,templist);
+    let templist = outputList;
+    // console.log(templist);
+    
     pathWithZeroes.some((node, i) => {
       setTimeout(() => {
         if (node === "0") {
-          let item = templist[0];
-          templist.shift();
-          setOutputList(
-            outputList.map((e) => {
-              console.log(e);
-              if (item.id === e.id) {
-                e.check = true;
-              }
-              return e;
-            })
-          );
+          setIndex(index+1)
         }
+        console.log(node)
         setCurrentNode(node);
       }, i * 500);
     });
