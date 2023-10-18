@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   ArrowHead,
   ArrowLoopSm,
-  ArrowLoopLg,
   ArrowBody,
 } from "../components/Arrows";
 

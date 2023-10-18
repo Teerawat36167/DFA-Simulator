@@ -15,25 +15,18 @@ const Main = () => {
   const [outputList, setOutputList] = useState([]);
   const [visibleButton, setVisibleButton] = useState(true)
 
-  // {value: , check:}
-
   const [currentNode, setCurrentNode] = useState();
   const [simulating, setSimulating] = useState(false);
-  let i =1
   const closeToasts = useToast();
-  const validString = useToast();
-  const trapString = useToast();
-  const shortString = useToast();
   const notInLanguageString = useToast();
   const router = useRouter();
   let input = string;
-  let results = "";
+
   useEffect(()=>{
     setOutputList(
             outputList.map((e) => {
               if ((index-1) === e.id) {
                 if(index != 0){
-
                   e.check = true;
                 }
               }
@@ -44,52 +37,13 @@ const Main = () => {
   const closeAll = () => {
     closeToasts.closeAll();
   };
-  const validToast = () => {
-    validString({
-      title: "Valid String!",
-      status: "success",
-      isClosable: true,
-    });
-  };
-  const trapToast = () => {
-    trapString({
-      title: "Invalid: Trapped",
-      status: "error",
-      isClosable: true,
-    });
-  };
-  const shortToast = () => {
-    shortString({
-      title: "Invalid: Too Short",
-      status: "error",
-      isClosable: true,
-    });
-  };
+  
   const notInLanguageToast = () => {
     notInLanguageString({
       title: "Empty/Invalid Input",
       status: "warning",
       isClosable: true,
     });
-  };
-
-  const handleValid = () => {
-    // console.log("DONE OK");
-    setSimulating(false);
-    validToast();
-    setData(results);
-  };
-  const handleTrapped = () => {
-    // console.log("DONE TRAPPED");
-    setSimulating(false);
-    trapToast();
-    setData(results);
-  };
-  const handleShort = () => {
-    // console.log("DONE SHORT");
-    setSimulating(false);
-    shortToast();
-    setData(results);
   };
 
   const handleTextChange = (e) => {
@@ -172,8 +126,6 @@ const Main = () => {
     }
   };
 
-  console.log(visibleButton);
-
   return (
     <Flex
       direction={["column", "column", "column", "column", "column", "row"]}
@@ -185,7 +137,6 @@ const Main = () => {
         data={data}
         string={string}
         handleTextChange={handleTextChange}
-        // simulating={simulating}
         handleSimulation={handleSimulation}
         handleReset={handleReset}
         setSimulating={setSimulating}

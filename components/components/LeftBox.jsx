@@ -1,6 +1,5 @@
 import {
   Flex,
-  Input,
   Button,
   Heading,
   Box,
@@ -12,15 +11,10 @@ import { FaCheck } from "react-icons/fa";
 import { ImCross, ImOpera } from "react-icons/im";
 
 const LeftBox = ({
-
-  handleTest,
-  data,
   string,
   handleReset,
   handleTextChange,
   handleSimulation,
-  // handleSimulate
-  setSimulating,
   outputString,
   outputList,
   visibleButton
@@ -59,6 +53,7 @@ const LeftBox = ({
                   border: "1px solid #ccc",
                   borderRadius: "5px",
                   padding: "10px",
+                  resize: "none"
                 }}
                 placeholder={"# Your Python code here\n\tdef hello_world():\n\t\tprint(\"Hello, World!\")\n\tfor i in range(5):\n\t\tprint(i)"}
                 value={string}
@@ -71,7 +66,6 @@ const LeftBox = ({
                   <Button
                     onClick={handleSimulation}
                     disabled={!visibleButton}
-                  // onClick={handleTest}
                   >
                     Simulate
                   </Button>
@@ -86,7 +80,7 @@ const LeftBox = ({
               <Flex align="center">
                 <Heading>Output String:</Heading>
               </Flex>
-              <div style={{
+              <div className="box" style={{
                   fontSize: ["0.7em", "0.7em", "0.9em"],
                   margin: "1rem 0",
                   height: "8rem",
@@ -97,16 +91,17 @@ const LeftBox = ({
                   border: "1px solid #ccc",
                   borderRadius: "5px",
                   padding: "10px",
-                  overflow: "scroll"
+                  overflow: "scroll",
+                  
                 }}>
                 {outputString}
               </div>
             </Flex>
             <Flex direction="column" width="20%" ml="10%">
               test
-              <Flex direction="column" height="300px" overflow="scroll">
+              <Flex direction="column" height="300px" overflow="scroll" className="box">
                 {outputList.map((value , index) => (
-                  <Box key={index} display="flex" justifyContent="space-around" mt="3" border="2px" paddingX="2" paddingY="3">
+                  <Box key={index} display="flex" justifyContent="space-around" mt="3" border="1px" paddingX="2" paddingY="3">
                     {value.value}
                     {value.check && <FaCheck />}
                   </Box>

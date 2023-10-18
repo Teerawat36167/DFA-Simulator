@@ -1,10 +1,9 @@
-import { Flex, Button, Heading, Tag } from "@chakra-ui/react";
+import { Flex} from "@chakra-ui/react";
 
 import FirstDFA from "../DFA/FirstDFA";
 const RightBox = ({
   simulating,
   currentNode,
-  input
 }) => {
 
   return (
