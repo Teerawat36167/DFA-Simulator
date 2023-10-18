@@ -103,7 +103,7 @@ const LeftBox = ({
             </Flex>
             <Flex direction="column" width="20%" ml="10%">
               test
-              <Flex direction="column" height="50%" overflow="scroll">
+              <Flex direction="column" height="300px" overflow="scroll">
                 {outputList.map((value , index) => (
                   <Box key={index} display="flex" justifyContent="space-around" mt="3" border="2px" paddingX="2" paddingY="3">
                     {value.value}

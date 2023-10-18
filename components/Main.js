@@ -162,7 +162,7 @@ const Main = () => {
           setVisibleButton(true)
         }
         setCurrentNode(node);
-      }, i * 200);
+      }, i * 500);
     });
   };
 
