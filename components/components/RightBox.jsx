@@ -10,7 +10,6 @@ const RightBox = ({
     <>
       <Flex
         direction="column"
-        mb={[14, 14, 16, 16, 16, 0]}
         w="640px"
       >
         <Flex
@@ -21,6 +20,7 @@ const RightBox = ({
         >
           <FirstDFA currentNode={currentNode} simulating={simulating}/>
         </Flex>
+
       </Flex>
     </>
   );

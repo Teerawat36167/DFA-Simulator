@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 
 import { FaCheck } from "react-icons/fa";
-import { ImCross, ImOpera } from "react-icons/im";
 
 const LeftBox = ({
   string,
@@ -27,7 +26,7 @@ const LeftBox = ({
         mr={[0, 0, 0, 0, 0, 24]}
         mt={[14, 14, 16, 16, 16, 0]}
       >
-        <Flex align="flex-end" justify="space-between">
+        <Flex align="flex-end" justify="space-between" height="150px">
           <Heading variant="title">Tokenizer Virtualization</Heading>
           <Code fontSize={["0.5em", null, "0.6em", null, null, "0.6em"]}>
             CHICKEN DONT'T EAT PORK

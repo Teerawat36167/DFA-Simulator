@@ -1,5 +1,5 @@
-import { Flex, useToast, Divider } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Flex, useToast, Divider, Link } from "@chakra-ui/react";
+import { react, useEffect, useState } from "react";
 
 import LeftBox from "./components/LeftBox";
 import RightBox from "./components/RightBox";
@@ -127,30 +127,36 @@ const Main = () => {
   };
 
   return (
-    <Flex
-      direction={["column", "column", "column", "column", "column", "row"]}
-      align="center"
-    >
-      {/* top */}
-      <LeftBox
-        handleTest={handleTest}
-        data={data}
-        string={string}
-        handleTextChange={handleTextChange}
-        handleSimulation={handleSimulation}
-        handleReset={handleReset}
-        setSimulating={setSimulating}
-        outputString={outputString}
-        outputList={outputList}
-        visibleButton={visibleButton}
-      />
-      <Divider
-        display={["block", null, "block", null, null, "none"]}
-        mt="6"
-        mb="2"
-      />
-      {/* butttom */}
-      <RightBox simulating={simulating} currentNode={currentNode} />
+    <Flex direction="column" align="center">
+      <Flex
+        direction={["column", "column", "column", "column", "column", "row"]}
+        align="center"
+      >
+        {/* top */}
+        <LeftBox
+          handleTest={handleTest}
+          data={data}
+          string={string}
+          handleTextChange={handleTextChange}
+          handleSimulation={handleSimulation}
+          handleReset={handleReset}
+          setSimulating={setSimulating}
+          outputString={outputString}
+          outputList={outputList}
+          visibleButton={visibleButton}
+        />
+        <Divider
+          display={["block", null, "block", null, null, "none"]}
+          mt="6"
+          mb="2"
+        />
+        {/* butttom */}
+        <RightBox simulating={simulating} currentNode={currentNode} />
+      </Flex>
+      {/* footer */}
+      <div style={{marginBottom:"20px", marginTop:"20px"}}>
+        <Link href="https://python-tokenizer-visualization-pe2h.vercel.app/">Source Code(github)</Link>
+      </div>
     </Flex>
   );
 };
