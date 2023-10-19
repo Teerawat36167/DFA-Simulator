@@ -51,7 +51,8 @@ export function tokenize(buffer) {
         state_seq = []
         
         if (!finals.includes(state) && state !== "5") {
-            throw new Error(`Rejected at state ${state}`);
+            alert("Can't input only one spacebar.")
+            location.reload()
         }
         if (temp !== "") {
             tokens.push(temp.trim() !== "    " ? temp : "    ");

@@ -11,6 +11,7 @@ import { FaCheck } from "react-icons/fa";
 
 const LeftBox = ({
   string,
+  setString,
   handleReset,
   handleTextChange,
   handleSimulation,
@@ -18,6 +19,15 @@ const LeftBox = ({
   outputList,
   visibleButton
 }) => {
+
+  const indent = (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const { selectionStart, selectionEnd } = e.target;
+      const newText = `${string.substring(0, selectionStart)}\t${string.substring(selectionEnd)}`;
+      setString(newText);
+    }
+  }
 
   return (
     <>
@@ -57,6 +67,7 @@ const LeftBox = ({
                 placeholder={"# Your Python code here\n\tdef hello_world():\n\t\tprint(\"Hello, World!\")\n\tfor i in range(5):\n\t\tprint(i)"}
                 value={string}
                 onChange={handleTextChange}
+                onKeyDown={indent}
                 rows={4}
                 cols={50}
               />
@@ -97,7 +108,7 @@ const LeftBox = ({
               </div>
             </Flex>
             <Flex direction="column" width="20%" ml="10%">
-              test
+              Process
               <Flex direction="column" height="300px" overflow="scroll" className="box">
                 {outputList.map((value , index) => (
                   <Box key={index} display="flex" justifyContent="space-around" mt="3" border="1px" paddingX="2" paddingY="3">

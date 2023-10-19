@@ -65,6 +65,9 @@ const Main = () => {
       if (listStr[i] == '\n') {
         temp += "\\n"
       }
+      if (listStr[i] == '\t') {
+        temp += "\\t"
+      }
       temp = temp + listStr[i] + " ' ";
       if (i != listStr.length - 1) {
         temp += ", ' ";
@@ -81,7 +84,9 @@ const Main = () => {
         if (o == "\n") {
           return {value: "\\n", check: false, id: i++ }
         }
-        if (o != "(" && o != ")") {
+        if (o == "\t") {
+          return {value: "\\t", check: false, id: i++ }
+        } if (o != "(" && o != ")") {
           return { value: o, check: false, id: i++ };
         }
       })
@@ -94,9 +99,8 @@ const Main = () => {
     setIndex(num)
     setVisibleButton(false)
     const output = tokenize(string);
-    console.log(output[1]);
+    console.log(0,output[1]);
     addOutputList(output[1]);
-    console.log(3,outputList);
     addOutputStr(output[1]);
     const allPath = output[0];
     let walking = [];
@@ -137,6 +141,7 @@ const Main = () => {
           handleTest={handleTest}
           data={data}
           string={string}
+          setString={setString}
           handleTextChange={handleTextChange}
           handleSimulation={handleSimulation}
           handleReset={handleReset}
