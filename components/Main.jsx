@@ -155,7 +155,7 @@ const Main = () => {
       </Flex>
       {/* footer */}
       <div style={{marginBottom:"20px", marginTop:"20px"}}>
-        <Link href="https://python-tokenizer-visualization-pe2h.vercel.app/">Source Code(github)</Link>
+        <Link href="https://github.com/Teerawat36167/Python-Tokenizer-Visualization" target="_blank">Source Code(github)</Link>
       </div>
     </Flex>
   );
