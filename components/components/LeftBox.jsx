@@ -63,7 +63,7 @@ const LeftBox = ({
                   borderRadius: "5px",
                   padding: "10px",
                   resize: "none",
-                  '&::-webkit-scrollbar' : {
+                  "&::WebkitScrollbar" : {
                     display: "none",
                   }
                 }}
