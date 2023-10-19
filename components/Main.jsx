@@ -83,9 +83,8 @@ const Main = () => {
       .map((o) => {
         if (o == "\n") {
           return {value: "\\n", check: false, id: i++ }
-        }
-        if (o == "\t") {
-          return {value: "\\t", check: false, id: i++ }
+        } if (o.startsWith("\t")) {
+          return {value: "\\t"+o, check: false, id: i++ }
         } if (o != "(" && o != ")") {
           return { value: o, check: false, id: i++ };
         }

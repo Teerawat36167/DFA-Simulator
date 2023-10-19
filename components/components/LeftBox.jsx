@@ -62,7 +62,10 @@ const LeftBox = ({
                   border: "1px solid #ccc",
                   borderRadius: "5px",
                   padding: "10px",
-                  resize: "none"
+                  resize: "none",
+                  '&::-webkit-scrollbar' : {
+                    display: "none",
+                  }
                 }}
                 placeholder={"# Your Python code here\n\tdef hello_world():\n\t\tprint(\"Hello, World!\")\n\tfor i in range(5):\n\t\tprint(i)"}
                 value={string}
